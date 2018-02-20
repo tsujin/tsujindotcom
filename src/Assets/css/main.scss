@@ -1,1 +1,28 @@
 @import "./_globals.scss";
+
+header {
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  background-color: $black;
+  z-index: 999;
+
+  .logo {
+    position: relative;
+    left: 3%;
+    top: 25%;
+    color: white;
+  }
+}
+
+.content-box {
+  display: flex;
+  overflow: hidden;
+  width: 95%;
+  background-color: $white;
+
+  p {
+    padding-top: 40px;
+    margin: 5px;
+  }
+}

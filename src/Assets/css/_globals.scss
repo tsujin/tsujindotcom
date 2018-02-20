@@ -4,6 +4,7 @@
 
 $black: #000;
 $white: #fff;
+$gray: #3c3c3c;
 
 /////////////////
 // - MIXINS
@@ -29,9 +30,16 @@ $break-large: 1024px;
 // - DEFAULTS
 ////////////////
 
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 body {
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+  background-color: $gray;
 
   @include respond-to(medium-screens) { font-size: 16px; }
 
