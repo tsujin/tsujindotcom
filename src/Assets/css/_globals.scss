@@ -10,6 +10,9 @@ $gray: #3c3c3c;
 // - MIXINS
 ////////////////
 
+
+// media breakpoint queries
+
 $break-small: 320px;
 
 $break-large: 1024px;
@@ -24,6 +27,16 @@ $break-large: 1024px;
   @else if $media == wide-screens {
     @media only screen and (min-width: $break-large) { @content; }
   }
+}
+
+// transitions
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+      -ms-transition: $args;
+       -o-transition: $args;
+          transition: $args;
 }
 
 /////////////////
