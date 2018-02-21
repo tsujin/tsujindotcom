@@ -5,6 +5,8 @@
 $black: #000;
 $white: #fff;
 $gray: #3c3c3c;
+$orange: #ff5d00;
+$lightgray: #b8bbc1;
 
 /////////////////
 // - MIXINS
@@ -67,10 +69,6 @@ $break-large: 1024px;
   @include transform(translate($x));
 }
 
-@mixin translateY($y) {
-  @include transform(translate($y));
-}
-
 /////////////////
 // - DEFAULTS
 ////////////////
@@ -84,7 +82,7 @@ body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
-  background-color: $gray;
+  background-color: $lightgray;
 
   @include respond-to(medium-screens) { font-size: .8em; }
 
