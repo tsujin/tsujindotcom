@@ -24,8 +24,12 @@ class Header extends Component {
   render() {
     return (
       <header style={{ opacity: this.state.opacity }}>
+        <input id="hamburger-state" class="hamburger-state" name="hamburger-state" type="checkbox"/>
+        <label class="hamburger-button" for="hamburger-state">
+          <span></span>
+        </label>
         <div className="logo">
-          logo
+          
         </div>
       </header>
     )

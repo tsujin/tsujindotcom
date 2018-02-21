@@ -39,6 +39,38 @@ $break-large: 1024px;
           transition: $args;
 }
 
+// transforms
+@mixin transform($args) {
+  -webkit-transform: $args;
+     -moz-transform: $args;
+      -ms-transform: $args;
+       -o-transform: $args;
+          transform: $args;
+}
+
+// transform origin
+@mixin transform-origin($args) {
+  -webkit-transform-origin: $args;
+     -moz-transform-origin: $args;
+      -ms-transform-origin: $args;
+       -o-transform-origin: $args;
+          transform-origin: $args;
+}
+
+// rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}));
+}
+
+// translate
+@mixin translateX($x) {
+  @include transform(translate($x));
+}
+
+@mixin translateY($y) {
+  @include transform(translate($y));
+}
+
 /////////////////
 // - DEFAULTS
 ////////////////
@@ -51,10 +83,10 @@ html {
 body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 1em;
   background-color: $gray;
 
-  @include respond-to(medium-screens) { font-size: 16px; }
+  @include respond-to(medium-screens) { font-size: .8em; }
 
-  @include respond-to(handhelds) { font-size: 14px; }
+  @include respond-to(handhelds) { font-size: .7em; }
 }
