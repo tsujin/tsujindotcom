@@ -9,7 +9,7 @@ header {
   width: 100%;
   position: fixed;
   background-color: $black;
-  z-index: 100;
+  z-index: 99;
   @include transition(opacity 1s ease)
 
   &:hover {
@@ -35,12 +35,16 @@ header {
 
     &:checked+.hamburger-button>span:before {
       top: 0px;
-      @include transform(translateX(-9px) translateY(12px) rotate(-45deg) scale(1.1, 1))
+      @include transform(translateX(-12px) translateY(12px) rotate(-45deg) scale(1.1, 1))
     }
 
     &:checked+.hamburger-button>span:after {
       top: 0px;
-      @include transform(translateX(-9px) translateY(-11px) rotate(45deg) scale(1.1, 1))
+      @include transform(translateX(-12px) translateY(-11px) rotate(45deg) scale(1.1, 1))
+    }
+
+    &:hover+.hamburger-button,.hamburger-state:focus+.hamburger-button {
+      background-color: rgba(255, 255, 255, 0.1) !important;
     }
   }
 
@@ -83,10 +87,6 @@ header {
         top: 9px;
       }
     }
-  }
-
-  .hamburger-state:hover+.hamburger-button,.hamburger-state:focus+.hamburger-button {
-    background-color: rgba(0,0,0,0.2)
   }
 
   .logo {
