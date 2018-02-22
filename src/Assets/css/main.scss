@@ -11,7 +11,7 @@ header {
   top: 0%;
   background-color: $black;
   z-index: 99;
-  border-bottom: solid 3px $orange;
+  border-bottom: solid 5px $orange;
   @include transition(opacity 1s ease)
 
   &:hover {
@@ -124,9 +124,6 @@ BEGIN CONTENT
   overflow: hidden;
   width: 95%;
   background-color: $white;
-
-  p {
-    padding-top: 40px;
-    margin: 5px;
-  }
+  padding: 8px;
+  padding-top: 45px;
 }
