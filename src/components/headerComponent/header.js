@@ -28,9 +28,8 @@ class Header extends Component {
         <label class="hamburger-button" for="hamburger-state">
           <span></span>
         </label>
-        <div className="logo">
-          
-        </div>
+        <nav></nav>
+
       </header>
     )
   }

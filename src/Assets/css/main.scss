@@ -8,8 +8,10 @@ header {
   height: 40px;
   width: 100%;
   position: fixed;
+  top: 0%;
   background-color: $black;
   z-index: 99;
+  border-bottom: solid 3px $orange;
   @include transition(opacity 1s ease)
 
   &:hover {
@@ -59,7 +61,7 @@ header {
       height: 4px;
       border-radius: 9px;
       margin: auto;
-      top: 50%;
+      top: 45%;
       @include transition(width .25s ease);
       font-size: 0;
       background-color: $white;
@@ -91,11 +93,28 @@ header {
 
   .logo {
     position: relative;
-    left: 3%;
+    left: 45px;
     top: 25%;
     color: white;
   }
 }
+
+  nav {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    top: 43px;
+    background-color: $gray;
+    height: 70px;
+    overflow: hidden;
+    @include transition(visibility 0s linear 0.5s, opacity 0.5s linear)
+
+    input[type="checkbox"]:checked ~ & {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+    }
+  }
 
 /*
 BEGIN CONTENT
