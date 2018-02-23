@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Navbar from './navbar';
 
 class Header extends Component {
   constructor() {
@@ -28,8 +29,7 @@ class Header extends Component {
         <label class="hamburger-button" for="hamburger-state">
           <span></span>
         </label>
-        <nav></nav>
-
+        <Navbar/>
       </header>
     )
   }
