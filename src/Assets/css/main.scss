@@ -140,7 +140,6 @@ header {
         display: inline-block;
         box-sizing: border-box;
         width: 75px;
-        padding: 0.3rem 0.5rem;
 
         a {
           font-family: 'Segoe UI', sans-serif;
@@ -151,12 +150,28 @@ header {
           display: block;
           text-align: center;
 
+            &.active {
+            background-color: $cream;
+
+            svg > path {
+              stroke: $charcoal !important;
+            }
+
+            span {
+              color: $charcoal;
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+
           svg {
             height: 45px;
             width: 45px;
             pointer-events: none;
             display: block;
             margin: 0 auto;
+            padding-top: 0.3rem;
+            padding-bottom: 0.1rem;
           }
 
           span {
