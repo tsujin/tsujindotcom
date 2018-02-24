@@ -9,7 +9,7 @@ header {
   width: 100%;
   position: fixed;
   top: 0%;
-  background-color: $black;
+  background-color: $charcoal;
   z-index: 99;
   border-bottom: solid 5px $orange;
   @include transition(opacity 1s ease)
@@ -108,6 +108,66 @@ header {
     height: 70px;
     overflow: hidden;
     @include transition(visibility 0s linear 0.5s, opacity 0.5s linear)
+
+    &:hover span {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+    }
+
+    &:hover {
+      .home-icon path {
+      stroke: $lightgreen;
+      }
+
+      .blog-icon path {
+        stroke: $orange;
+      }
+
+      .portfolio-icon path {
+        stroke: $lightblue;
+      }
+    }
+
+    ul {
+      list-style: none;
+      list-style-image: none;
+      padding: 0;
+      margin: 0 auto;
+
+      li {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 75px;
+        padding: 0.3rem 0.5rem;
+
+        a {
+          font-family: 'Segoe UI', sans-serif;
+          font-size: 14px;
+          color: $white;
+          outline: none;
+          text-decoration: none;
+          display: block;
+          text-align: center;
+
+          svg {
+            height: 45px;
+            width: 45px;
+            pointer-events: none;
+            display: block;
+            margin: 0 auto;
+          }
+
+          span {
+            visibility: hidden;
+            opacity: 0;
+            @include transition(visibility 0s linear 0.3s, opacity 0.3s linear);
+          }
+        }
+      }
+
+    }
 
     input[type="checkbox"]:checked ~ & {
       visibility: visible;
