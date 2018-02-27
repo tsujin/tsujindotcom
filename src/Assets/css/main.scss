@@ -101,10 +101,11 @@ header {
 
   nav {
     position: relative;
+    width: 225px;
     visibility: hidden;
     opacity: 0;
     top: 45px;
-    background-color: $gray;
+    background-color: $darkgray;
     height: 70px;
     overflow: hidden;
     @include transition(visibility 0s linear 0.5s, opacity 0.5s linear)
@@ -136,7 +137,6 @@ header {
       margin: 0 auto;
 
       li {
-        position: relative;
         display: inline-block;
         box-sizing: border-box;
         width: 75px;
@@ -144,6 +144,7 @@ header {
         a {
           font-family: 'Segoe UI', sans-serif;
           font-size: 14px;
+          height: 70px;
           color: $white;
           outline: none;
           text-decoration: none;
@@ -152,6 +153,7 @@ header {
 
             &.active {
             background-color: $cream;
+            opacity: 1 !important;
 
             svg > path {
               stroke: $charcoal !important;
@@ -164,6 +166,10 @@ header {
             }
           }
 
+          &:hover {
+            opacity: 0.7;
+          }
+
           svg {
             height: 45px;
             width: 45px;
@@ -171,7 +177,6 @@ header {
             display: block;
             margin: 0 auto;
             padding-top: 0.3rem;
-            padding-bottom: 0.1rem;
           }
 
           span {
