@@ -2,16 +2,11 @@
 // - COLORS
 /////////////////
 
-$black: #000;
-$white: #fff;
-$darkgray: #3c3c3c;
-$orange: #ff5d00;
-$lightgray: #b8bbc1;
-$purple: #3e016d;
-$lightblue: #72c1f9;
-$lightgreen: #11d300;
-$charcoal: #1f231e;
-$cream: #bcbfbb;
+$background: #4d4c59;
+$main-font-color: #f7f6f0;
+$trim-color: #362c36;
+$focus-color: #a7cbd5;
+$foreground: #71777d; // for boxes containing text possibly? currently unused
 
 /////////////////
 // - CONSTANTS
@@ -106,9 +101,17 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family:
+  'Open Sans', sans-serif;
   font-size: 1em;
-  background-color: $lightgray;
+  color: $main-font-color;
+}
+
+main {
+  height: 100%;
+  padding: 2em 2em;
+  text-align: center;
+  background: $background;
 }
 
 // scale each header up in size, based on the vw

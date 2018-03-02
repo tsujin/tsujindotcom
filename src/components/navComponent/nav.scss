@@ -1,0 +1,51 @@
+@import "../../assets/css/_globals.scss";
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $trim-color;
+  overflow-x: hidden;
+  padding-top: 60px;
+  @include transition(0.5s);
+  text-align: left;
+
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 24px;
+    display: block;
+    outline: 0;
+    @include transition(0.3s);
+
+    &:hover {
+      color: $focus-color !important;
+    }
+
+    &:visited, &:link, &:focus {
+      color: $main-font-color;
+    }
+  }
+}
+
+.hamburger-btn {
+  display: block;
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  @include transition(0.3s);
+
+  &:hover {
+    color: $focus-color;
+  }
+}
