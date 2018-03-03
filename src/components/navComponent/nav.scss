@@ -25,7 +25,6 @@
     top: 0;
     right: 25px;
     font-size: 26px;
-    @include transition(0.3s);
 
     &:hover {
       color: $focus-color;
@@ -83,7 +82,6 @@
   font-size: 30px;
   cursor: pointer;
   position: fixed;
-  @include transition(0.3s);
 
   &:hover {
     color: $focus-color;
