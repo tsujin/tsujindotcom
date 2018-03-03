@@ -38,7 +38,7 @@ class Nav extends Component {
       <Router>
         <div>
           <div className="sidenav" style={ { width: `${ this.state.width }` } }>
-            <span className="close-btn">&times;</span>
+            <button className="close-btn">&times;</button>
             <NavLink exact to='/'>About</NavLink>
             <NavLink exact to='/News'>News</NavLink>
             <NavLink exact to='/Portfolio'>Portfolio</NavLink>
