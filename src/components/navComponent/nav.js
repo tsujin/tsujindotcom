@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, NavLink } from 'react-router-dom';
 import './nav.scss';
 
 class Nav extends Component {
@@ -13,6 +14,7 @@ class Nav extends Component {
   }
 
   handleClick() {
+    // when the nav is open, we will add a listener for clicks anywhere on the page
     if (!this.state.isOpen) {
       document.addEventListener('click', this.handleOuterClick, false);
       this.setState({width: "250px"});
@@ -20,27 +22,30 @@ class Nav extends Component {
         document.removeEventListener('click', this.handleOuterClick, false);
         this.setState({width: "0px"});
       }
-
+      // toggle state of the navbar
       this.setState(prevState => ({
         isOpen: !prevState.isOpen,
       }));
   }
 
+  // handles clicks outside of our component
   handleOuterClick(e) {
     this.handleClick();
   }
 
   render() {
     return (
-      <div>
-        <div className="sidenav" style={ { width: `${ this.state.width }` } }>
-          <a href="#" className="close-btn">&times;</a>
-          <a href="#">About</a>
-          <a href="#">News</a>
-          <a href="#">Portfolio</a>
+      <Router>
+        <div>
+          <div className="sidenav" style={ { width: `${ this.state.width }` } }>
+            <span className="close-btn">&times;</span>
+            <NavLink exact to='/'>About</NavLink>
+            <NavLink exact to='/News'>News</NavLink>
+            <NavLink exact to='/Portfolio'>Portfolio</NavLink>
+          </div>
+          <span className="hamburger-btn" onClick={this.handleClick}>&#9776;</span>
         </div>
-        <span className="hamburger-btn" onClick={this.handleClick}>&#9776;</span>
-      </div>
+      </Router>
     )
   }
 }
