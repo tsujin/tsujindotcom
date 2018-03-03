@@ -1,7 +1,7 @@
 @import "../../assets/css/_globals.scss";
 
 .sidenav {
-  width: 250px;
+  width: 300px;
   font-family: Arial, sans-serif;
   font-weight: 600;
   height: 100%;
@@ -33,7 +33,6 @@
 
   .nav-menu {
     height: 100%;
-    overflow: auto;
     text-align: left;
     padding: 2.5em 1.5em 0;
   }
@@ -55,7 +54,7 @@
 
   .navlink {
     padding: 0.8em;
-    display: inline-block;
+    display: block;
     font-size: .9em;
     white-space: nowrap;
 
