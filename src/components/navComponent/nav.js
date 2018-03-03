@@ -26,7 +26,6 @@ class Nav extends Component {
       this.setState(prevState => ({
         isOpen: !prevState.isOpen,
       }));
-      console.log(this.state.transform)
   }
 
   // handles clicks outside of our component
