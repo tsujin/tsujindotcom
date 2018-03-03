@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import './nav.scss';
 
 class Nav extends Component {
