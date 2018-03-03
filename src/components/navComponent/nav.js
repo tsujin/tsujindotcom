@@ -7,7 +7,7 @@ class Nav extends Component {
     super();
     this.state = {
       isOpen: false,
-      width: "0px",
+      transform: "-100",
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleOuterClick = this.handleOuterClick.bind(this);
@@ -17,15 +17,16 @@ class Nav extends Component {
     // when the nav is open, we will add a listener for clicks anywhere on the page
     if (!this.state.isOpen) {
       document.addEventListener('click', this.handleOuterClick, false);
-      this.setState({width: "250px"});
+      this.setState({transform: "0"});
     } else {
         document.removeEventListener('click', this.handleOuterClick, false);
-        this.setState({width: "0px"});
+        this.setState({transform: "-100"});
       }
       // toggle state of the navbar
       this.setState(prevState => ({
         isOpen: !prevState.isOpen,
       }));
+      console.log(this.state.transform)
   }
 
   // handles clicks outside of our component
@@ -37,13 +38,37 @@ class Nav extends Component {
     return (
       <Router>
         <div>
-          <div className="sidenav" style={ { width: `${ this.state.width }` } }>
+          <div className="sidenav" style={ { transform: `translate(${ this.state.transform }%, 0%)` } }>
             <button className="close-btn">&times;</button>
-            <NavLink exact to='/'>About</NavLink>
-            <NavLink exact to='/News'>News</NavLink>
-            <NavLink exact to='/Portfolio'>Portfolio</NavLink>
+            <div className="nav-menu-wrap">
+              <div className="nav-menu">
+                <NavLink className="navlink" exact to='/'>
+                  <i class="far fa-address-card"></i>
+                  <span>About</span>
+                </NavLink>
+                <NavLink className="navlink" exact to='/News'>
+                  <i class="far fa-newspaper"></i>
+                  <span>News</span>
+                </NavLink>
+                <NavLink className="navlink" exact to='/Portfolio'>
+                  <i class="far fa-folder-open"></i>
+                  <span>Portfolio</span>
+                </NavLink>
+              </div>
+            </div>
+            <div className="social-bar">
+              <a href="https://www.linkedin.com/in/tsujin">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.facebook.com/justin.horn.904/">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a href="https://github.com/tsujin">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
-          <span className="hamburger-btn" onClick={this.handleClick}>&#9776;</span>
+          <span className="hamburger-btn" onClick={this.handleClick}><i class="fas fa-bars"></i></span>
         </div>
       </Router>
     )
