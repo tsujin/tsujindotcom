@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Nav from './components/navComponent/nav'
+import Nav from './components/navComponent/nav';
+import styles from './dynamicStyles';
 
 import './assets/css/normalize.css'
 
@@ -8,14 +9,9 @@ class Root extends Component {
     super();
     this.state = {
       navIsOpen: false,
-      navTransform: '-100',
       overlayIsVisibile: false,
-      overlayStyle: {
-        transition: 'opacity 0.3s, transform 0s 0.3s',
-        transform: 'translate3d(100%, 0, 0)',
-        opacity: '0',
-      }
     }
+
     this.toggleNav = this.toggleNav.bind(this);
     this.closeNav = this.closeNav.bind(this);
     this.toggleOverlay = this.toggleOverlay.bind(this);
@@ -25,10 +21,8 @@ class Root extends Component {
     // when the nav is open, we will add a listener for clicks anywhere on the page
     if (!this.state.navIsOpen) {
       document.addEventListener('click', this.closeNav, false);
-      this.setState({navTransform: '0'});
     } else {
         document.removeEventListener('click', this.closeNav, false);
-        this.setState({navTransform: "-100"});
       }
       // toggle state of the navbar
       this.setState(prevState => ({
@@ -42,23 +36,6 @@ class Root extends Component {
   }
 
   toggleOverlay() {
-    if (!this.state.overlayIsVisible) {
-      this.setState({
-        overlayStyle: {
-          transition: 'opacity 0.3s',
-          transform: '',
-          opacity: '1',
-        }
-      });
-    } else {
-      this.setState({
-        overlayStyle: {
-          transition: 'opacity 0.3s, transform 0s 0.3s',
-          transform: 'translate3d(100%, 0, 0)',
-          opacity: '0',
-        }
-      });
-    }
     this.setState(prevState => ({
       overlayIsVisible: !prevState.overlayIsVisible,
     }));
@@ -67,8 +44,8 @@ class Root extends Component {
   render() {
     return (
       <div id="outer-container">
-        <div className="overlay" style={this.state.overlayStyle}></div>
-        <Nav onClick={this.toggleNav} transform={this.state.navTransform}/>
+        <div className="overlay" style={styles.overlayStyle(this.state.overlayIsVisible)}></div>
+        <Nav onClick={this.toggleNav} style={styles.navStyle(this.state.navIsOpen)}/>
         <main id="page-wrap">
           <h1>About me</h1>
           <p>

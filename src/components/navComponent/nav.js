@@ -7,7 +7,7 @@ class Nav extends Component {
     return (
       <Router>
         <div>
-          <div className="sidenav" style={ { transform: `translate(${ this.props.transform }%, 0%)` } }>
+          <div className="sidenav" style={this.props.style}>
             <button className="close-btn">&times;</button>
             <div className="nav-menu-wrap">
               <div className="nav-menu">
