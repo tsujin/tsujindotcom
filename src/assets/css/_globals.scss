@@ -113,6 +113,15 @@ body {
   color: $main-font-color;
 }
 
+// a slightly opaque overlay for when the main page is out of focus
+.overlay {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
+}
+
 main {
   height: 100%;
   padding: 2em 2em;
