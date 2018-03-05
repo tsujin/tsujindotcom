@@ -93,24 +93,26 @@ $max_width: 1200px;
 // - DEFAULTS
 ////////////////
 
-* {
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
   min-height: 100%;
-  overflow-x: hidden;
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  display: block;
 }
 
 body {
   height: 100%;
   font-family:
   'Open Sans', sans-serif;
-  font-size: 1em;
   color: $main-font-color;
+}
+
+#outer-container {
+  height: 100%;
 }
 
 // a slightly opaque overlay for when the main page is out of focus
@@ -127,6 +129,8 @@ main {
   padding: 2em 2em;
   text-align: center;
   background: $background;
+  overflow-y: scroll;
+  position: fixed;
 }
 
 // scale each header up in size, based on the vw

@@ -81,6 +81,9 @@
   font-size: 30px;
   cursor: pointer;
   position: fixed;
+  z-index: 1;
+  top: 36px;
+  left: 36px;
 
   &:hover {
     color: $focus-color;
