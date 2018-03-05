@@ -37,7 +37,7 @@ class Nav extends Component {
               </a>
             </div>
           </div>
-          <span className="hamburger-btn" onClick={this.props.onClick}><i className="fas fa-bars"></i></span>
+          <button className="hamburger-btn" onClick={this.props.onClick} tabIndex={1}><i className="fas fa-bars"></i></button>
         </div>
       </Router>
     )

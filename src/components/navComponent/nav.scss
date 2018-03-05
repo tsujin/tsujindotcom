@@ -41,11 +41,11 @@
     text-decoration: none;
     outline: 0;
 
-    &:hover {
+    &:hover, &:focus {
       color: $focus-color !important;
     }
 
-    &:visited, &:link, &:focus {
+    &:visited, &:link {
       color: $main-font-color;
     }
 
@@ -84,8 +84,11 @@
   z-index: 1;
   top: 36px;
   left: 36px;
+  background: none;
+  border: none;
+  color: inherit;
 
-  &:hover {
+  &:hover, &:focus {
     color: $focus-color;
   }
 }
