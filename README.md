@@ -1,2 +1,2 @@
 # tsujindotcom
-Old layout.. new layout is at https://www.github.com/tsujin/tsujindotcom
+Source for for http://tsujin.com
